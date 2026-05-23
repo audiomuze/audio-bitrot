@@ -11,6 +11,8 @@ This repository contains lightweight Bash scripts focused on batch-friendly audi
 - Fast shell-based tooling with no application UI overhead.
 - Script-focused workflow for repeatable audio processing tasks.
 - Straightforward command-line usage suitable for automation.
+- Resumable runs by default using per-path state files.
+- Detailed logging for successful files, corrupted files, decode errors, and discovery errors.
 
 ## Included Scripts
 
@@ -29,11 +31,10 @@ chmod +x tflac.sh twavpack.sh
 
 Use `-h` or `--help` if supported by a script to view available options.
 
+By default, both scripts resume from existing state/log files in `/tmp`. Use `--fresh` to clear prior state and start a full new pass.
+
 ## Requirements
 
 - Linux/macOS shell environment (Bash)
 - Any audio tools expected by the scripts (installed and available on `PATH`)
 
-## Notes
-
-These scripts are intentionally minimal and can be tailored to your own codec settings, naming rules, and folder layout.
